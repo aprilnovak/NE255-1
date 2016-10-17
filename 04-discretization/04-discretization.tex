@@ -309,10 +309,18 @@ where we have used the idea that we can separate a spherical harmonic into even 
     \frac{(l-m)!}{(l+m)!}}\:.
 \end{align}
 
-We will make this substitution (for the sake of avoiding having constants floating around)
+The \(\sqrt{2-\delta_{m0}}\) factor appears from a requirement that in a new basis (an entirely \textit{real} basis), that the new functions \(\hat{Y}_{lm}^e\) and \(\hat{Y}_{lm}^o\) must still be orthogonal. By requiring both the even and odd components to individually be orthogonal, we mean that the integral of \(\hat{Y}_{lm}^e\hat{Y}_{l'm'}^e\) (and the integral of the odd components as well) over the unit sphere give a magnitude of unity. Performing this integration shows that the integral does not evaluate to 1, and hence we must tack on a coefficient to the definitions of \(Y^e_{lm}\) and \(Y^o_{lm}\) in order to obtain orthogonality. That coefficient is the \(\sqrt{2-\delta_{m0}}\) factor appearing above.
+
+We will make this substitution in order for our new expansion to satisfy orthogonality:
 \begin{equation}
-  \hat{Y}^e_{lm} = \frac{1}{\sqrt{2}}Y^e_{lm}\:,\quad
-  \hat{Y}^o_{lm} = \frac{1}{\sqrt{2}}Y^o_{lm}\:.
+  \hat{Y}^e_{lm} = \frac{1}{\sqrt{2-\delta_{m0}}}Y^e_{lm}\:,\quad
+  \hat{Y}^o_{lm} = \frac{1}{\sqrt{2-\delta_{m0}}}Y^o_{lm}\:.
+\end{equation}
+
+However, we know that the odd function is always zero for \(m=0\) due to its definition in Eq. \eqref{eq:Yo}. Hence, the above equations are often written with the definition for \(Y_{lm}^o\) implicitly assuming that we know that for \(m=0\), \(Y_{lm}^o=0\). With this implicit assumption, the definition for \(Y_{lm}^o\) becomes:
+
+\begin{equation}
+\hat{Y}^o_{lm} = \frac{1}{\sqrt{2}}Y^o_{lm}
 \end{equation}
 
 Next, we expand the Spherical Harmonics into real and imaginary components. The sum over $m>0$ then becomes 
